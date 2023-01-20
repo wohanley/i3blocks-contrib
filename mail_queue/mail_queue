@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ ! -z "$(ls -A $HOME/.local/share/mail.queue)" ]]; then
+    echo "mail queued"
+    echo "mail queued"
+    echo '#FFFF00'
+fi

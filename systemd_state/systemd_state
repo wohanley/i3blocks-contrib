@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+USER_FLAG=''
+USER_PREFIX=''
+
+if [ "$USER_INSTANCE" = 'true' ]
+then
+    USER_FLAG='--user'
+    USER_PREFIX='user: '
+fi
+
+STATE="$( systemctl $USER_FLAG show --property SystemState | cut --delimiter '=' -f 2 )"
+
+if [ "$STATE" != "running" ]
+then
+    echo "${USER_PREFIX}${STATE}"
+    echo "${USER_PREFIX}${STATE}"
+    echo '#FF0000'
+fi
